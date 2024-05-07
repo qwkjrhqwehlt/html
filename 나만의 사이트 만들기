@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAVETHEEARTH</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      h2{
+        color: rgb(55, 172, 208);
+      }
+      p { 
+        color: red;
+      }
+      button{
+        color: mintcream;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1><a href="#">DEVELOP</a></h1>
+        <div class="nav">
+          <ul>
+            <li><a href="#">기부금</a></li>
+            <li><a href="#">기부금사용</a></li>
+            <li><a href="#">토론</a></li>
+            <li><a href="#">보존해야할가치</a></li>
+            <li><a href="#">지구</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero">
+        <h2>너와 나, 그리고 우리, 환경존중</h2>
+        <p>
+          환경, 지구사회는 나만누리는것이 아닙니다. <br />나만 모르척 하는게 아닌
+          우리모두가 지켜야 할 크나큰 문제입니다.
+        </p>
+        <button>영상으로 함께 해요</button>
+      </div>
+    </div>
+  </body>
+</html>
