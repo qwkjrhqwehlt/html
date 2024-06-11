@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- 1번 실습 -->"
+<button onclick="document.getElementById('lightb').src = 'light-bulb1.png'">
+		전등켜기스위치</button>
+<button onclick="document.getElementById('lightb').src = 'light=bulb2.png'">
+		전등끄기스위치</button>
+
+<img id="lightb" src="light-bulb2.png" style="width:120px">'
+
+
+<p>마우스를 이미지 위로 올리면 이미지가 커집니다.</p>
+
+<img onmouseover="this.style.width = '200px'" onmouseout = "this.style" src="dog.jpg" width="100px">
+<script>
+    let s = "Hello World";
+    let t = "How are you" + " today?";
+</script>
+    
+</body>
+</html>
