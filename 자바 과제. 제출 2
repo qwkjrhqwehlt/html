@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Headers with Gradient Colors</title>
+    <style>
+        .header1 { background: linear-gradient(to right, red, yellow);}
+        .header2 { background: linear-gradient(to right, blue, green);}
+        .header3 { background: linear-gradient(to right, purple, pink);}
+        .header4 { background: linear-gradient(to right, orange, cyan); }
+        .header5 { background: linear-gradient(to right, magenta, lime); }
+        .header6 { background: linear-gradient(to right, navy, gold);}
+    </style>
+</head>
+<body>
+    <script>
+        for (i = 1; i <= 6; i++) {
+            document.write("<h" + i + " class='header" + i + "'>header" + i + "</h" + i + ">");
+        }
+    </script>
+</body>
+</html>
