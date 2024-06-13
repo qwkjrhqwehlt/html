@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>온도 변환기</title>
+</head>
+<body>
+    <table border="3">
+        <tr>
+            <td>섭씨온도</td>
+            <td>화씨온도</td>
+        </tr>
+        <script>
+            function celsiusToFahrenheit(celsius) {
+                return (celsius * 1.8) + 32;
+            }
+            
+            for (var celsius = 0; celsius <= 10; celsius++) {
+                var fahrenheit = celsiusToFahrenheit(celsius);
+                document.write("<tr><td>" + celsius + "</td><td>" + fahrenheit.toFixed(1) + "</td></tr>");
+            }
+        </script>
+    </table>
+</body>
+</html>
