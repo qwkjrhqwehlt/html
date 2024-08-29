@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>간단 계산기</title>
+<style>
+    /* 전체 페이지의 중앙에 배치하기 위한 스타일 설정 */
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+    }
+    /* 계산기 컨테이너의 스타일 설정 */
+    .container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 270px;
+    }
+    /* 계산기 버튼의 기본 스타일 설정 */
+    .button {
+        padding: 10px 15px;
+        margin: 5px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .button.add { background-color: #007BFF; }
+    .button.subtract { background-color: #28A745; }
+    .button.multiply { background-color: #FFC107; }
+    .button.divide { background-color: #DC3545; }
+    .button.sqrt { background-color: #6C757D; }
+    .button.reset { background-color: #17A2B8; }
+
+    .button:hover {
+        opacity: 0.8;
+    }
+</style>
+<script>
+function add(r) {
+    var num1 = parseFloat(document.getElementById('number1').value);
+    var num2 = parseFloat(document.getElementById('number2').value);
+    var result;
+    switch(r) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 !== 0) {
+                result = num1 / num2;
+            } else {
+                result = '잘못입력'; 
+            }
+            break;
+        case 'sqrt':
+            result = Math.sqrt(num1);
+            break;
+        default:
+            result = '아님';
+    }
+    document.getElementById('result').value = result; /* 결과를 출력 필드에 표시 */
+}
+
+function reset() {
+    document.getElementById('number1').value = '';
+    document.getElementById('number2').value = '';
+    document.getElementById('result').value = ''; /* 모든 입력 필드 초기화 */
+}
+</script>
+</head>
+<body>
+<div class="container">
+    <div>
+        <label for="number1">숫자 1:</label>
+        <input type="text" id="number1">
+    </div>
+    <div>
+        <label for="number2">숫자 2:</label>
+        <input type="text" id="number2">
+    </div>
+    <div>
+        <input type="button" value="+" onClick="add('+')" class="button add" title="덧셈">
+        <input type="button" value="-" onClick="add('-')" class="button subtract" title="뺄셈">
+        <input type="button" value="*" onClick="add('*')" class="button multiply" title="곱셈">
+        <input type="button" value="/" onClick="add('/')" class="button divide" title="나눗셈">
+        <input type="button" value="√" onClick="add('sqrt')" class="button sqrt" title="제곱근">
+        <input type="button" value="초기화" onClick="reset()" class="button reset" title="초기화">
+    </div>
+    <div>
+        <label for="result">연산결과:</label>
+        <input type="text" id="result" value="" readonly>
+    </div>
+</div>
+</body>
+</html>
