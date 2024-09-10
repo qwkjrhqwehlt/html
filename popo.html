@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        #board {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #board tr td {
+            border: 1px solid white;
+            background: #34da79;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+        }
+
+        #board tr td.clicked {
+            background: #6c5ee7;
+        }
+
+        #board tr td.mine {
+            background: #FF0000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>지뢰찾기</h1>
+    <table id=board>
+    </table>
+    <BUTTON onclick="genGrid();">새로운 게임</BUTTON>
+    <script>
+        let grid = document.getElementById("board");
+        const totalMines = 3;
+        let mineCount = 0;
+        genGrid();
+
+        function genGrid() {
+            grid.innerHTML = "";
+            mineCount = 0
+            let minePositions = [];
+            while (minePositions.length < totalMines) {
+                let randomPosition = Math.floor(Math.random() * 64);
+                if (!minePositions.includes(randomPosition)) {
+                    minePositions.push(randomPosition);
+                }
+            }
+
+            for (let i = 0; i < 8; i++) {
+                let row = grid.insertRow(i);
+                for (let j = 0; j < 8; j++) {
+                    let cell = row.insertCell(j);
+                    let position = i * 8 + j;
+                    cell.onclick = function () { clickBox(this); };
+                    cell.setAttribute("mine", minePositions.includes(position) ? "true" : "false");
+                }
+            }
+        }
+
+        function clickBox(cell) {
+            if (cell.getAttribute("mine") == "true") {
+                cell.className = "mine";
+                mineCount++;
+                if (mineCount === totalMines) {
+                    alert("3개 지뢰 다 밟음");
+                    genGrid();
+                }
+            } else {
+                cell.className = "clicked";
+            }
+        }
+    </script>
+</body>
+
+</html>
